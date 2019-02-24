@@ -9,7 +9,7 @@ class ProxyRunner < ContainerRunner
     options = {
       "Image" => ProxyBuilder::TAG
     }
-    options["HostConfig"] = { "Binds" => ["#{@tmpdir}:/app/config/"] } if @tmpdir
+    options["HostConfig"] = { "Binds" => ["#{@tmpdir}:/app/client/config/"] } if @tmpdir
 
     super(options, delete)
   end

@@ -6,7 +6,7 @@ task :shell, [:fixture] do |t, args|
   include PathHelper
   BuildpackBuilder.new(@debug)
   fixture_path    = File.expand_path(fixtures_path(args[:fixture]))
-  cmd = %Q{docker run -i -v #{fixture_path}:/src -t #{BuildpackBuilder::TAG} /bin/bash -c "/app/bin/config/make-config && bash"}
+  cmd = %Q{docker run -i -v #{fixture_path}:/src -t #{BuildpackBuilder::TAG} /bin/bash -c "/app/client/bin/config/make-config && bash"}
   puts cmd
   system cmd
 end
